@@ -40,6 +40,7 @@ dependencies:
   flutter_barcode_scanner: ^1.0.2
   barcode_widget: ^1.0.0
   flutter_reactive_button: ^1.1.0
+  expandable_group: ^0.0.5
 
 dev_dependencies:
   flutter_test:

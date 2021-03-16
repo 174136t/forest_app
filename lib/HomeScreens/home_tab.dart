@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:forest_app/Animation/Fade_animation.dart';
 import 'package:forest_app/HomeScreens/barcode_generator.dart';
 import 'package:forest_app/HomeScreens/barcode_reader.dart';
@@ -10,6 +11,7 @@ import 'package:forest_app/HomeScreens/newsFeed.dart';
 import 'package:forest_app/HomeScreens/profile.dart';
 import 'package:forest_app/utils/constants.dart';
 import 'package:forest_app/utils/size_config.dart';
+import 'package:forest_app/widgets/hero_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -281,8 +283,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   filterQuality: FilterQuality.high,
                   fit: BoxFit.fill,
                 ),
-                 Container(
-                  height:SizeConfig.heightMultiplier * 5 ,
+                Container(
+                  height: SizeConfig.heightMultiplier * 5,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -332,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       //   },
                       //   iconWidth: 32.0,
                       // ),
-                       Container(
+                      Container(
                         // width: SizeConfig.widthMultiplier * 40,
                         //  color: Colors.blue,
                         child: Row(
@@ -600,6 +602,43 @@ class _HomeScreenState extends State<HomeScreen> {
                                       dotColor: Colors.white,
                                       dotIncreasedColor: Colors.orange,
                                     )),
+                              ),
+                            ),
+                            SizedBox(
+                              height: SizeConfig.heightMultiplier * 2,
+                            ),
+                            Container(
+                              height: SizeConfig.heightMultiplier * 7,
+                              width: SizeConfig.widthMultiplier * 95,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey[500],
+
+                                    offset: Offset(0.0, 5.0), //(x,y)
+
+                                    blurRadius: 6.0,
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(FontAwesomeIcons.tree),  Icon(FontAwesomeIcons.tree),
+                                  Text('  No of Trees : ',
+                                  style: GoogleFonts.montserrat(
+                                    fontSize: SizeConfig.heightMultiplier*2.4,
+                                    fontWeight: FontWeight.w600
+                                  ),),
+                                  HeroText1(
+                                    animationDelay: 0,
+                                    heroText: ['2021 '],
+                                    heroTextSize:
+                                        SizeConfig.heightMultiplier * 2.5,
+                                  ),  Icon(FontAwesomeIcons.tree),  Icon(FontAwesomeIcons.tree),
+                                ],
                               ),
                             ),
                             SizedBox(

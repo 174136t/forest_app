@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_reactive_button/flutter_reactive_button.dart';
 import 'package:forest_app/Animation/Fade_animation.dart';
+import 'package:forest_app/HomeScreens/postItem.dart';
 import 'package:forest_app/utils/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -187,7 +188,7 @@ class _NewsFeedState extends State<NewsFeed> {
                   fit: BoxFit.fill,
                 ),
                 Container(
-                  height:SizeConfig.heightMultiplier * 5 ,
+                  height: SizeConfig.heightMultiplier * 5,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -237,7 +238,7 @@ class _NewsFeedState extends State<NewsFeed> {
                       //   },
                       //   iconWidth: 32.0,
                       // ),
-                       Container(
+                      Container(
                         // width: SizeConfig.widthMultiplier * 40,
                         //  color: Colors.blue,
                         child: Row(
@@ -336,20 +337,31 @@ class _NewsFeedState extends State<NewsFeed> {
                         width: SizeConfig.widthMultiplier * 2,
                       ),
                       Expanded(
-                        child: Container(
-                          height: SizeConfig.heightMultiplier * 7,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(25),
-                              border: Border.all(color: Colors.grey, width: 2)),
-                          child: Center(
-                              child: Text(
-                            'Post New Item',
-                            style: GoogleFonts.montserrat(
-                                fontWeight: FontWeight.w700,
-                                fontSize: SizeConfig.heightMultiplier * 2.6,
-                                color: Colors.grey[700]),
-                          )),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PostItem(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            height: SizeConfig.heightMultiplier * 7,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(25),
+                                border:
+                                    Border.all(color: Colors.grey, width: 2)),
+                            child: Center(
+                                child: Text(
+                              'Post New Item',
+                              style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: SizeConfig.heightMultiplier * 2.6,
+                                  color: Colors.grey[700]),
+                            )),
+                          ),
                         ),
                       )
                     ],

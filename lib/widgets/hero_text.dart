@@ -27,3 +27,28 @@ class HeroText extends StatelessWidget {
     );
   }
 }
+class HeroText1 extends StatelessWidget {
+  final double animationDelay;
+  final List<String> heroText;
+  final double heroTextSize;
+
+  HeroText1({this.animationDelay, this.heroText, this.heroTextSize});
+  @override
+  Widget build(BuildContext context) {
+    return FadeAnimation(
+      animationDelay,
+      ColorizeAnimatedTextKit(
+        colors: [Colors.deepPurple[700], Colors.green],
+        repeatForever: true,
+        speed: Duration(milliseconds: 800),
+        alignment: AlignmentDirectional.topStart,
+        text: heroText,
+        textStyle: TextStyle(
+            letterSpacing: 1.2,
+            color: Colors.black,
+            fontSize: heroTextSize,
+            fontWeight: FontWeight.bold),
+      ),
+    );
+  }
+}
